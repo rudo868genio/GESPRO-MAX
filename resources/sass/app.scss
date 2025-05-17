@@ -1,0 +1,151 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+/* Estilos personalizados para el login */
+.container {
+    min-height: 80vh;
+}
+
+.card {
+    border-radius: 8px;
+    .card-title {
+        font-weight: bold;
+    }
+}
+
+/* ENCABEZADOS */
+h1, h2, h3 {
+    color: black;
+}
+
+/* BOTONES ACCESIBLES CON CONTRASTE ADECUADO */
+
+// Botón primario
+.btn-primary {
+    background-color: #0dfdf1 !important;
+    border-color: #0dfdf1 !important;
+    color: #000000 !important;
+}
+
+// Botón éxito accesible
+.btn-success {
+    background-color: #00ff67 !important;  // Verde oscuro accesible
+    border-color: #00ff67 !important;
+    color: #000000 !important;
+}
+
+// Botón advertencia accesible
+.btn-warning {
+    background-color: #fa7e00 !important;  // Naranja fuerte accesible
+    border-color: #fa7e00 !important;
+    color: #000000 !important;
+}
+
+// Botón peligro accesible
+.btn-danger {
+    background-color: #b30000 !important;  // Rojo oscuro accesible
+    border-color: #b30000 !important;
+    color: #FFFFFF !important;
+}
+
+// Botón informativo accesible
+.btn-info {
+    background-color: #1565C0 !important;  // Azul fuerte accesible
+    border-color: #1565C0 !important;
+    color: #FFFFFF !important;
+}
+
+// Botón secundario
+.btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #FFFFFF !important;
+}
+
+/* PANEL LATERAL */
+.sidebar {
+    width: 210px;
+    min-height: 100vh;
+    background-color: #00b3aa;
+    color: #000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.nav-link {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    color: #000000;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link.active {
+    background-color: #00b3aa;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    background-color: #00b3aa;
+    color: #ffffff;
+}
+
+.logout-link {
+    margin-top: auto;
+    text-align: center;
+}
+
+/* MIGAS DE PAN (Breadcrumb) */
+.breadcrumb.custom-breadcrumb {
+    background-color: transparent;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+.breadcrumb.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #000000;
+    margin-right: 5px;
+}
+
+.breadcrumb.custom-breadcrumb .breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 2px 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.breadcrumb.custom-breadcrumb .breadcrumb-item a:hover {
+    background-color: #004494;
+    color: #ffffff;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.breadcrumb.custom-breadcrumb .breadcrumb-item.active {
+    color: #000000;
+    font-weight: normal;
+    font-style: italic;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-left: 5px;
+}
