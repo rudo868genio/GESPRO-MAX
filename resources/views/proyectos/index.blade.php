@@ -19,15 +19,19 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $proyecto->nombre }}</h5>
                         <p class="card-text">{{ $proyecto->descripcion }}</p>
-                        <p class="mb-1"><strong>Fecha Inicio:</strong> {{ $proyecto->fecha_inicio }}</p>
-                        <p class="mb-1"><strong>Fecha Final:</strong> {{ $proyecto->fecha_final }}</p>
+                        <p>
+                            <i class="fas fa-calendar-alt text-primary mb-1"></i>
+                            <strong>Fecha Inicio:</strong> {{ \Carbon\Carbon::parse($proyecto->fecha_inicio)->format('d/m/Y') }}
+                        </p>
+                        <p>
+                            <i class="fas fa-calendar-check text-success mb-1"></i>
+                            <strong>Fecha Final:</strong> {{ \Carbon\Carbon::parse($proyecto->fecha_final)->format('d/m/Y') }}
+                        </p>
                         <p>
                             <strong>Estado:</strong>
-                            @if($proyecto->estado == 1)
-                                <span class="badge bg-success">Activo</span>
-                            @else
-                                <span class="badge bg-danger">Inactivo</span>
-                            @endif
+                                <span class="badge {{ $proyecto->estado == 1 ? 'bg-success' : 'bg-secondary' }}">
+                                    {{ $proyecto->estado == 1 ? 'Activo' : 'Inactivo' }}
+                                </span>
                         </p>
                         <div class="d-flex justify-content-between">
                             <a href="{{ route('proyectos.show', $proyecto) }}" class="btn btn-primary btn-sm">
